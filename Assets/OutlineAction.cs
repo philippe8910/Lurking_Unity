@@ -4,19 +4,23 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody) , typeof(Outline))]
+[RequireComponent(typeof(Rigidbody))]
 public class OutlineAction : MonoBehaviour
 {
     [SerializeField] private Outline outlineSetting;
 
-    [SerializeField] private float time_f, time_Max;
+    [SerializeField] private float time_f, time_Max = 2;
 
     [SerializeField] private bool isEnter;
 
     private void Start()
     {
+        var _material = Resources.Load<Material>("Materials/OutlineObject");
+
         GetComponent<Rigidbody>().isKinematic = true;
-        
+        GetComponent<MeshRenderer>().material = _material;
+
+        gameObject.AddComponent<Outline>();
         outlineSetting = GetComponent<Outline>();
         outlineSetting.OutlineMode = Outline.Mode.OutlineVisible;
     }
