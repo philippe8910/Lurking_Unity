@@ -93,8 +93,8 @@ Material:
     - _EmissionScaleUI: 0
     - _Glossiness: 0.5
     - _InterAlpha: 0
-    - _InterEdge: 9.6
-    - _InterPow: 20
+    - _InterEdge: 4.3
+    - _InterPow: 5
     - _InvFade: 5
     - _Metallic: 0
     - _Mode: 1

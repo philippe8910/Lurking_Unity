@@ -23,6 +23,7 @@ public class OutlineAction : MonoBehaviour
         gameObject.AddComponent<Outline>();
         outlineSetting = GetComponent<Outline>();
         outlineSetting.OutlineMode = Outline.Mode.OutlineVisible;
+        outlineSetting.OutlineWidth = 8;
     }
 
     private void Update()

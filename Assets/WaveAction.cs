@@ -11,6 +11,6 @@ public class WaveAction : MonoBehaviour
     void Start()
     {
         transform.localScale = Vector3.zero;
-        transform.DOScale(new Vector3(15, 15, 15), waveSpeed).SetEase(Ease.Linear);
+        transform.DOScale(new Vector3(60, 60, 60), waveSpeed).SetEase(Ease.Linear);
     }
 }
