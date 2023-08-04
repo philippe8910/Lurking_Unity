@@ -80,7 +80,7 @@ Material:
     - _BiasMT: 1
     - _BiasMT2: 1
     - _BiasMT3: 1
-    - _Bri: 0
+    - _Bri: -0.14
     - _BumpScale: 1
     - _Con: 2
     - _Cutoff: 0.5
