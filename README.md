@@ -5,6 +5,8 @@ Inspired by the game "Lurking," I spent some time creating the effects and apply
 The gameplay is also entirely in darkness for the player. When the player or objects collide, they emit sound waves. These sound waves illuminate nearby objects to provide visibility for the player.
 ![image](https://github.com/philippe8910/Lurking_Unity/blob/main/Assets/Readme/1.gif)
 ![image](https://github.com/philippe8910/Lurking_Unity/blob/main/Assets/Readme/2.gif)
+![image](https://github.com/philippe8910/Lurking_Unity/blob/main/Assets/Readme/3.gif)
+
 
 ## Some problem
 Outline shader is not perfact in this project, It can not use in muti material model.  
