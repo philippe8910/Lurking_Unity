@@ -14,4 +14,12 @@ public class BallAction : MonoBehaviour
         Destroy(g , 5);
     }
 
+    [ContextMenu("Wave")]
+    public void InsWave()
+    {
+        var g = Instantiate(wave, transform.position, wave.transform.rotation);
+        
+        Destroy(g , 5);
+    }
+
 }
