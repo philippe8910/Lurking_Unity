@@ -6,11 +6,16 @@ using UnityEngine;
 
 public class ZombieAction : MonoBehaviour
 {
+    [Header("Component Setting")]
     [SerializeField] private SkinnedMeshRenderer[] meshRenderers;
     
     [SerializeField] private Animator animator;
 
-    public float animationNormalizedTime = 0;
+    [Header("Value Setting")]
+    [SerializeField] private float animationNormalizedTime = 0;
+    
+    [SerializeField] private float outlineCountDownTime = 1;
+    
     void Start()
     {
         TryGetComponent(out animator);
@@ -56,7 +61,7 @@ public class ZombieAction : MonoBehaviour
 
     IEnumerator StartCountingOutlineDisable()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(outlineCountDownTime);
 
         foreach (var meshRenderer in meshRenderers)
         {

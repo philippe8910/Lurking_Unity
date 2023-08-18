@@ -15,14 +15,18 @@ public class HandBindingSetting : MonoBehaviour
     [Header("Value Setting")]
     [SerializeField] private float followSpeed;
     
+    [SerializeField] private float rotationSpeed;
+
+    [SerializeField] private bool usePhysics;
+    
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
 
-        if (bindTarget == null)
-        {
-            Debug.LogError("None Bind Target!!");
-        }
+        if (!usePhysics)
+            GetComponent<Collider>().isTrigger = true;
+
+        if (bindTarget == null) Debug.LogError("None Bind Target!!");
     }
 
     private void Update()
@@ -32,6 +36,6 @@ public class HandBindingSetting : MonoBehaviour
         
         
         rigidbody.velocity = (bindTarget.transform.position - transform.position) * followSpeed;
-        rigidbody.rotation = bindTarget.transform.rotation;
+        rigidbody.rotation = bindTarget.rotation;
     }
 }

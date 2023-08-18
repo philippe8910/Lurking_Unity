@@ -12936,7 +12936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1912290632
 Transform:
   m_ObjectHideFlags: 0
@@ -15985,7 +15985,8 @@ MonoBehaviour:
   - {fileID: 1409781895435489243}
   - {fileID: 5822821947828184390}
   animator: {fileID: 0}
-  animationNormalizedTime: 0.2
+  animationNormalizedTime: 0.3
+  outlineCountDownTime: 1
 --- !u!54 &919132148799458359
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23574,6 +23575,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8009366225367079712}
+  - component: {fileID: 8012369988868504919}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
@@ -23581,6 +23583,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8012369988868504919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8012369988868504918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4447d41f2ee75b4da7995496cb6905c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8012478094224183726
 GameObject:
   m_ObjectHideFlags: 0
@@ -24156,6 +24170,8 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   bindTarget: {fileID: 1961767160}
   followSpeed: 50
+  rotationSpeed: 50
+  usePhysics: 1
 --- !u!1 &8333248752517024550
 GameObject:
   m_ObjectHideFlags: 0
@@ -24886,6 +24902,8 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   bindTarget: {fileID: 1231327035}
   followSpeed: 50
+  rotationSpeed: 50
+  usePhysics: 1
 --- !u!1 &9019515343901465954
 GameObject:
   m_ObjectHideFlags: 0
