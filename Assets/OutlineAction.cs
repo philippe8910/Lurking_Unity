@@ -9,7 +9,7 @@ public class OutlineAction : MonoBehaviour
 {
     [SerializeField] private Outline outlineSetting;
 
-    [SerializeField] [Range(1,1)]  private float time_f, time_Max = 1;
+    [SerializeField] private float time_f, time_Max = 1;
 
     [SerializeField] private bool isEnter;
 

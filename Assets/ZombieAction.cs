@@ -10,38 +10,14 @@ public class ZombieAction : MonoBehaviour
     
     [SerializeField] private Animator animator;
 
-    [SerializeField] private bool isTrigger = false;
-    
-    [SerializeField] [Range(1,1)] private float time_f, time_Max = 1;
-
     public float animationNormalizedTime = 0;
     void Start()
     {
         TryGetComponent(out animator);
     }
 
-    private void Update()
-    {
-        if (isTrigger)
-        {
-            time_f += Time.deltaTime;
-
-            if (time_f > time_Max)
-            {
-                time_f = 0;
-                isTrigger = false;
-
-                foreach (var meshRenderer in meshRenderers)
-                {
-                    Debug.Log("Fade");
-                    StartCoroutine(FadeOut(meshRenderer.material));
-                }
-            }
-        }
-    }
-
     [ContextMenu("NextAnimationClip")]
-    public void NextAnimationClip()
+    private void NextAnimationClip()
     {
         Debug.Log("NextAnimationClip");
         animator.Play("Zombie Walk" , 0 , animationNormalizedTime);
@@ -56,22 +32,35 @@ public class ZombieAction : MonoBehaviour
         }
     }
 
+    private void NextPositionStep()
+    {
+        transform.DOMoveZ(transform.position.z - 2.5f , 0);
+    }
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Wave"))
         {
-            isTrigger = true;
-            time_f = 0;
-            
             NextAnimationClip();
-            
-            //todo
-            transform.DOMoveZ(transform.position.z - 2f , 0);
+            NextPositionStep();
 
+            StopCoroutine(StartCountingOutlineDisable()); 
+            StartCoroutine(StartCountingOutlineDisable());
+            
             foreach (var meshRenderer in meshRenderers)
             {
                 meshRenderer.material.SetColor("_OutlineColor" , Color.white);
             }
+        }
+    }
+
+    IEnumerator StartCountingOutlineDisable()
+    {
+        yield return new WaitForSeconds(1);
+
+        foreach (var meshRenderer in meshRenderers)
+        {
+            StartCoroutine(FadeOut(meshRenderer.material));
         }
     }
 
